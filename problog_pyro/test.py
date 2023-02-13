@@ -11,9 +11,9 @@ TEST_TEMPLATES = [
 ]
 
 TESTS = ["less", "equals", "sum"]
-NS = list(range(1, 6, 2))
-TIMEOUT = 2
-REPETITIONS = 1  # take median of these
+NS = list(range(1, 30))
+TIMEOUT = 120
+REPETITIONS = 10  # take median of these
 
 BUILD_DIR = "build"
 OUTPUT_DIR = "output"
@@ -55,6 +55,9 @@ if not os.path.isdir(BUILD_DIR):
 if not os.path.isdir(OUTPUT_DIR):
     os.mkdir(OUTPUT_DIR)
 
+def flprint(*args, **kwargs):
+    print(*args, flush=True, **kwargs)
+
 def time_cmd(cmd, timeout, repetitions):
     try:
         times = []
@@ -65,25 +68,25 @@ def time_cmd(cmd, timeout, repetitions):
                 stderr=subprocess.PIPE,
                 timeout=timeout,
             )
-            print(f"stdout: {completed.stdout} ;;; stderr: {completed.stderr}")
+            flprint(f"stdout: {completed.stdout} ;;; stderr: {completed.stderr}")
 
             if completed.returncode != 0:
-                print(f"Non-zero return code {completed.returncode}")
+                flprint(f"Non-zero return code {completed.returncode}")
                 sys.exit(completed.returncode)
 
             time = completed.stderr.decode('utf-8').strip()
             times.append(float(time))
         return median(times)
     except subprocess.TimeoutExpired:
-        print(f"Timed out after {TIMEOUT}s.")
+        flprint(f"Timed out after {TIMEOUT}s.")
         return None
 
 for test in TESTS:
-    print(f"=== Performing test \"{test}\" ===")
+    flprint(f"=== Performing test \"{test}\" ===")
     output_path = os.path.join(OUTPUT_DIR, f"{timestamp}_{test}.csv")
 
     for template_path, cmd_format, comment_format in TEST_TEMPLATES:
-        print(f"Template {template_path}")
+        flprint(f"Template {template_path}")
         instance_path = os.path.join(BUILD_DIR, f"{timestamp}_{test}_{template_path}")
         instantiate_template(template_path, test, instance_path, comment_format)
         for n in NS:
@@ -92,7 +95,7 @@ for test in TESTS:
                 segment.format(num_bits=n, instance_path=instance_path)
                 for segment in cmd_format
             )
-            print(f"Running n={n}")
+            flprint(f"Running n={n}")
             elapsed = time_cmd(cmd, TIMEOUT, REPETITIONS)
             if elapsed is None:
                 break
@@ -100,4 +103,4 @@ for test in TESTS:
             with open(output_path, "a") as output_file:
                 output_file.write("\t".join([template_path, str(n), str(elapsed)]) + "\n")
 
-    print()
+    flprint()
