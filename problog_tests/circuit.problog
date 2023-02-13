@@ -104,25 +104,21 @@ query(final_carry(a, b, t)).
 
 bit_val(X, I, Res) :- bit(X, I, Xi), IPow is 2 ** (I - 1), ite(Xi, IPow, 0, Res).
 
-final_carry_val(X, Y, Res) :-
-    num_bits(N),
-    final_carry(a, b, Carry),
-    NPow is 2 ** N,
-    ite(Carry, NPow, 0, Res).
-
-add_val(X, Y, 0, 0).
-add_val(X, Y, I, Res) :-
+val_of(X, 0, 0).
+val_of(X, I, Res) :-
     I > 0,
     Im1 is I - 1,
-    add_val(X, Y, Im1, PrevRes),
-    bit_val(add(X, Y), I, Val),
+    val_of(X, Im1, PrevRes),
+    bit_val(X, I, Val),
     Res is PrevRes + Val.
 
 add_val(X, Y, Res) :-
     num_bits(N),
-    add_val(X, Y, N, SumWithoutCarry),
-    final_carry_val(X, Y, CarryVal),
-    Res is SumWithoutCarry + CarryVal.
+    val_of(add(X, Y), N, SumWithoutCarry),
+    final_carry(X, Y, FinalCarry),
+    NPow is 2 ** N,
+    ite(FinalCarry, NPow, 0, FinalCarryVal),
+    Res is SumWithoutCarry + FinalCarryVal.
 
 query(add_val(a, b, _)).
 %~end
