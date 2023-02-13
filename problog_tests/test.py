@@ -1,7 +1,6 @@
 TEST_TEMPLATES = ["circuit.problog", "linear.problog"]
 TESTS = ["less", "equals", "sum"]
-
-NS = list(range(1, 31))
+NS = list(range(1, 30))
 TIMEOUT = 120
 
 BUILD_DIR = "build"
@@ -13,7 +12,6 @@ import os
 import sys
 import subprocess
 from datetime import datetime
-from time import perf_counter
 
 timestamp = datetime.now().strftime("%Y-%m-%d_%Hh%Mm%Ss")
 
@@ -46,7 +44,7 @@ for test in TESTS:
 
     for template_path in TEST_TEMPLATES:
         print(f"Template {template_path}")
-        instance_path = os.path.join(BUILD_DIR, f"{test}_{template_path}")
+        instance_path = os.path.join(BUILD_DIR, f"{test}_{timestamp}_{template_path}")
         instantiate_template(template_path, test, instance_path)
         for n in NS:
             cmd = ["time", "-f", '%e', "problog" ,"-a", str(n), instance_path]
