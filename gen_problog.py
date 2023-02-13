@@ -29,11 +29,11 @@ P::{name}_sample_now(X) :- {name}_domain(X), P is 1/(X + 1).
 """)
 
 
-uniform("a", 10)
+# uniform("a", 10)
 # uniform("b", 10)
 
-# uniform_sample("a", 5)
-# uniform_sample("b", 5)
+uniform_sample("a", 5)
+uniform_sample("b", 5)
 print("""
 % https://stackoverflow.com/questions/22450582/program-for-finding-gcd-in-prolog
 gcd(X,Y,G) :- X=Y, G=X.

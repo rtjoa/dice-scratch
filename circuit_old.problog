@@ -1,0 +1,13 @@
+% num_bits(N) :- cmd_args([N]).
+num_bits(2).
+
+0.5::flip(X).
+bit(Var, I) :- num_bits(N), between(1, N, I), flip([Var, I]).
+
+less_than(X, Y, I) :- \+ bit(X, I), bit(Y, I).
+less_than(X, Y, I) :- bit(X, I), bit(Y, I), Im1 is I - 1, less_than(X, Y, Im1).
+less_than(X, Y, I) :- \+ bit(X, I), \+ bit(Y, I), Im1 is I - 1, less_than(X, Y, Im1).
+
+less_than(X, Y) :- num_bits(N), less_than(X, Y, N).
+
+query(less_than(a, b)).

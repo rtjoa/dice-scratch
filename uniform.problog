@@ -1,9 +1,0 @@
-list([15|[]]).
-list([N|[Np1|L]]) :- list([Np1|L]), N is Np1 - 1, N >= 0.
-
-P::sample_now([H|L]) :- list([H|L]), P is 1/(16-H).
-sample([X|L], X) :- sample_now([X|L]).
-sample([H|L], X) :- \+ sample_now([H|L]), sample(L,X).
-
-a(X) :- list([0|L]), sample([0|L], X).
-query(a(_)).
