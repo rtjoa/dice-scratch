@@ -70,6 +70,9 @@ def time_cmd(cmd, timeout, repetitions):
             )
             flprint(f"stdout: {completed.stdout} ;;; stderr: {completed.stderr}")
 
+            if completed.returncode == 137:
+                flprint("Out of memory; got return code 137. Treating as timeout")
+                return None
             if completed.returncode != 0:
                 flprint(f"Non-zero return code {completed.returncode}")
                 sys.exit(completed.returncode)
