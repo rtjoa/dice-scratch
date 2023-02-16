@@ -2,7 +2,6 @@ using Dice
 include("../util.jl")
 
 function main()
-    # See state_machine.jpg for a diagram of this machine
     machine = Dict(  # List of transitions
         1 =>  # Start state of edge
             [(2, 1, .5),  # End state of edge, length, probability of taking
