@@ -12,7 +12,7 @@ TEST_TEMPLATES = [
 
 TESTS = ["less", "equals", "sum"]
 NS = list(range(1, 30))
-TIMEOUT = 120
+TIMEOUT = 60 * 60 * 2
 REPETITIONS = 10  # take median of these
 
 BUILD_DIR = "build"
@@ -27,6 +27,7 @@ from datetime import datetime
 from statistics import median
 
 timestamp = datetime.now().strftime("%Y-%m-%d_%Hh%Mm%Ss")
+timestamp = f"{timestamp}_{TIMEOUT}_{REPETITIONS}"
 
 # Create a version of `template_file` that only runs the code needed for
 # `test`, and save to `instance_path`.
