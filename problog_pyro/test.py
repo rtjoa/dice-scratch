@@ -1,19 +1,33 @@
 PROBLOG_CMD_FORMAT = ["problog", "{instance_path}", "-a", "{num_bits}"]
 PROBLOG_COMMENT_FORMAT = "%% %s"
+
 PYTHON_CMD_FORMAT = ["python3", "{instance_path}", "{num_bits}"]
 PYTHON_COMMENT_FORMAT = "# %s"
 
+OOPSLA_CMD_FORMAT = ["../Dice.native", "{instance_path}"]
+DICE_CMD_FORMAT = ["../newdice/_build/default/bin/dice.exe", "{instance_path}"]
+DICE_COMMENT_FORMAT = "// %s"
+
+
 TEST_TEMPLATES = [
-    ("circuit.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
-    ("linear.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
-    ("mix.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
-    ("pyro_template.py", PYTHON_CMD_FORMAT, PYTHON_COMMENT_FORMAT),
+    # ("circuit.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
+    # ("linear.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
+    # ("mix.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
+    ("bwh.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
+    # ("pyro_template.py", PYTHON_CMD_FORMAT, PYTHON_COMMENT_FORMAT),
+    # ("oopsla_template.dice", OOPSLA_CMD_FORMAT, DICE_COMMENT_FORMAT),
+    # ("uniform.dice", DICE_CMD_FORMAT, DICE_COMMENT_FORMAT),
+    # ("dice.dice", DICE_CMD_FORMAT, DICE_COMMENT_FORMAT),
 ]
 
-TESTS = ["less", "equals", "sum"]
+TESTS = [
+    # "less",
+    # "equals",
+    "sum",
+]
 NS = list(range(1, 30))
 TIMEOUT = 60 * 60 * 2
-REPETITIONS = 10  # take median of these
+REPETITIONS = 5  # take median of these
 
 BUILD_DIR = "build"
 OUTPUT_DIR = "output"
@@ -31,7 +45,7 @@ timestamp = f"{timestamp}_{TIMEOUT}_{REPETITIONS}"
 
 # Create a version of `template_file` that only runs the code needed for
 # `test`, and save to `instance_path`.
-def instantiate_template(template_file, test, instance_path, comment_format):
+def instantiate_template(template_file, test, instance_path, comment_format, num_bits):
     with open(template_path, "r") as template_file:
         with open(instance_path, "w") as instance_file:
             instance_file.write(
@@ -48,7 +62,13 @@ def instantiate_template(template_file, test, instance_path, comment_format):
                 elif "~end" in line:
                     cur_filter = None
                 elif cur_filter is None or test in cur_filter:
-                    instance_file.write(line)
+                    if "~py " in line:
+                        before, after = line.split("~py ")
+                        code = after.strip()
+                        instance_file.write(eval(code))
+                        instance_file.write("\n")
+                    else:
+                        instance_file.write(line)
 
 if not os.path.isdir(BUILD_DIR):
     os.mkdir(BUILD_DIR)
@@ -91,20 +111,20 @@ for test in TESTS:
 
     for template_path, cmd_format, comment_format in TEST_TEMPLATES:
         flprint(f"Template {template_path}")
-        instance_path = os.path.join(BUILD_DIR, f"{timestamp}_{test}_{template_path}")
-        instantiate_template(template_path, test, instance_path, comment_format)
-        for n in NS:
+        for num_bits in NS:
+            instance_path = os.path.join(BUILD_DIR, f"{timestamp}_{test}_{num_bits}b_{template_path}")
+            instantiate_template(template_path, test, instance_path, comment_format, num_bits)
             cmd = ["time", "-f", "%e"]
             cmd.extend(
-                segment.format(num_bits=n, instance_path=instance_path)
+                segment.format(num_bits=num_bits, instance_path=instance_path)
                 for segment in cmd_format
             )
-            flprint(f"Running n={n}")
+            flprint(f"Running n={num_bits}")
             elapsed = time_cmd(cmd, TIMEOUT, REPETITIONS)
             if elapsed is None:
                 break
             
             with open(output_path, "a") as output_file:
-                output_file.write("\t".join([template_path, str(n), str(elapsed)]) + "\n")
+                output_file.write("\t".join([template_path, str(num_bits), str(elapsed)]) + "\n")
 
     flprint()

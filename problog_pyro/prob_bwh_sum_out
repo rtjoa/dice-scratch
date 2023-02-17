@@ -1,0 +1,60 @@
+=== Performing test "sum" ===
+Template bwh.problog
+Running n=1
+stdout: b' bit(add(a,b),1,t):\t0.5       \nfinal_carry(a,b,t):\t0.25      \n' ;;; stderr: b'0.13\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \nfinal_carry(a,b,t):\t0.25      \n' ;;; stderr: b'0.12\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \nfinal_carry(a,b,t):\t0.25      \n' ;;; stderr: b'0.11\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \nfinal_carry(a,b,t):\t0.25      \n' ;;; stderr: b'0.11\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \nfinal_carry(a,b,t):\t0.25      \n' ;;; stderr: b'0.12\n'
+Running n=2
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \nfinal_carry(a,b,t):\t0.375     \n' ;;; stderr: b'0.12\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \nfinal_carry(a,b,t):\t0.375     \n' ;;; stderr: b'0.14\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \nfinal_carry(a,b,t):\t0.375     \n' ;;; stderr: b'0.14\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \nfinal_carry(a,b,t):\t0.375     \n' ;;; stderr: b'0.14\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \nfinal_carry(a,b,t):\t0.375     \n' ;;; stderr: b'0.13\n'
+Running n=3
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \nfinal_carry(a,b,t):\t0.4375    \n' ;;; stderr: b'0.18\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \nfinal_carry(a,b,t):\t0.4375    \n' ;;; stderr: b'0.18\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \nfinal_carry(a,b,t):\t0.4375    \n' ;;; stderr: b'0.17\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \nfinal_carry(a,b,t):\t0.4375    \n' ;;; stderr: b'0.19\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \nfinal_carry(a,b,t):\t0.4375    \n' ;;; stderr: b'0.17\n'
+Running n=4
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \nfinal_carry(a,b,t):\t0.46875   \n' ;;; stderr: b'0.33\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \nfinal_carry(a,b,t):\t0.46875   \n' ;;; stderr: b'0.33\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \nfinal_carry(a,b,t):\t0.46875   \n' ;;; stderr: b'0.34\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \nfinal_carry(a,b,t):\t0.46875   \n' ;;; stderr: b'0.35\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \nfinal_carry(a,b,t):\t0.46875   \n' ;;; stderr: b'0.35\n'
+Running n=5
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \nfinal_carry(a,b,t):\t0.484375  \n' ;;; stderr: b'0.77\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \nfinal_carry(a,b,t):\t0.484375  \n' ;;; stderr: b'0.74\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \nfinal_carry(a,b,t):\t0.484375  \n' ;;; stderr: b'0.72\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \nfinal_carry(a,b,t):\t0.484375  \n' ;;; stderr: b'0.74\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \nfinal_carry(a,b,t):\t0.484375  \n' ;;; stderr: b'0.75\n'
+Running n=6
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \nfinal_carry(a,b,t):\t0.4921875 \n' ;;; stderr: b'3.08\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \nfinal_carry(a,b,t):\t0.4921875 \n' ;;; stderr: b'3.00\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \nfinal_carry(a,b,t):\t0.4921875 \n' ;;; stderr: b'3.02\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \nfinal_carry(a,b,t):\t0.4921875 \n' ;;; stderr: b'3.03\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \nfinal_carry(a,b,t):\t0.4921875 \n' ;;; stderr: b'3.06\n'
+Running n=7
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \nfinal_carry(a,b,t):\t0.49609375\n' ;;; stderr: b'18.69\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \nfinal_carry(a,b,t):\t0.49609375\n' ;;; stderr: b'18.62\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \nfinal_carry(a,b,t):\t0.49609375\n' ;;; stderr: b'18.91\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \nfinal_carry(a,b,t):\t0.49609375\n' ;;; stderr: b'18.77\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \nfinal_carry(a,b,t):\t0.49609375\n' ;;; stderr: b'18.97\n'
+Running n=8
+stdout: b' bit(add(a,b),1,t):\t12.734192 \n bit(add(a,b),2,t):\t13.234131 \n bit(add(a,b),3,t):\t12.546661 \n bit(add(a,b),4,t):\t11.546783 \n bit(add(a,b),5,t):\t10.046631 \n bit(add(a,b),6,t):\t2.4299316 \n bit(add(a,b),7,t):\t1.4997559 \n bit(add(a,b),8,t):\t11.796753 \nfinal_carry(a,b,t):\t15.287109 \n' ;;; stderr: b'98.46\n'
+stdout: b' bit(add(a,b),1,t):\t12.734192 \n bit(add(a,b),2,t):\t13.234131 \n bit(add(a,b),3,t):\t12.546661 \n bit(add(a,b),4,t):\t11.546783 \n bit(add(a,b),5,t):\t10.046631 \n bit(add(a,b),6,t):\t2.4299316 \n bit(add(a,b),7,t):\t1.4997559 \n bit(add(a,b),8,t):\t11.796753 \nfinal_carry(a,b,t):\t15.287109 \n' ;;; stderr: b'99.03\n'
+stdout: b' bit(add(a,b),1,t):\t12.734192 \n bit(add(a,b),2,t):\t13.234131 \n bit(add(a,b),3,t):\t12.546661 \n bit(add(a,b),4,t):\t11.546783 \n bit(add(a,b),5,t):\t10.046631 \n bit(add(a,b),6,t):\t2.4299316 \n bit(add(a,b),7,t):\t1.4997559 \n bit(add(a,b),8,t):\t11.796753 \nfinal_carry(a,b,t):\t15.287109 \n' ;;; stderr: b'98.28\n'
+stdout: b' bit(add(a,b),1,t):\t12.734192 \n bit(add(a,b),2,t):\t13.234131 \n bit(add(a,b),3,t):\t12.546661 \n bit(add(a,b),4,t):\t11.546783 \n bit(add(a,b),5,t):\t10.046631 \n bit(add(a,b),6,t):\t2.4299316 \n bit(add(a,b),7,t):\t1.4997559 \n bit(add(a,b),8,t):\t11.796753 \nfinal_carry(a,b,t):\t15.287109 \n' ;;; stderr: b'100.07\n'
+stdout: b' bit(add(a,b),1,t):\t12.734192 \n bit(add(a,b),2,t):\t13.234131 \n bit(add(a,b),3,t):\t12.546661 \n bit(add(a,b),4,t):\t11.546783 \n bit(add(a,b),5,t):\t10.046631 \n bit(add(a,b),6,t):\t2.4299316 \n bit(add(a,b),7,t):\t1.4997559 \n bit(add(a,b),8,t):\t11.796753 \nfinal_carry(a,b,t):\t15.287109 \n' ;;; stderr: b'100.92\n'
+Running n=9
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.5       \n bit(add(a,b),9,t):\t0.5       \nfinal_carry(a,b,t):\t0.49902344\n' ;;; stderr: b'587.74\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.5       \n bit(add(a,b),9,t):\t0.5       \nfinal_carry(a,b,t):\t0.49902344\n' ;;; stderr: b'569.56\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.5       \n bit(add(a,b),9,t):\t0.5       \nfinal_carry(a,b,t):\t0.49902344\n' ;;; stderr: b'589.20\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.5       \n bit(add(a,b),9,t):\t0.5       \nfinal_carry(a,b,t):\t0.49902344\n' ;;; stderr: b'584.37\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \n bit(add(a,b),2,t):\t0.5       \n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.5       \n bit(add(a,b),5,t):\t0.5       \n bit(add(a,b),6,t):\t0.5       \n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.5       \n bit(add(a,b),9,t):\t0.5       \nfinal_carry(a,b,t):\t0.49902344\n' ;;; stderr: b'595.92\n'
+Running n=10
+stdout: b' bit(add(a,b),1,t):\t0.5       \nbit(add(a,b),10,t):\t0.50000381\n bit(add(a,b),2,t):\t0.50000763\n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.50000381\n bit(add(a,b),5,t):\t0.50000381\n bit(add(a,b),6,t):\t0.50000381\n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.50000763\n bit(add(a,b),9,t):\t0.50000763\nfinal_carry(a,b,t):\t0.49951553\n' ;;; stderr: b'4295.87\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \nbit(add(a,b),10,t):\t0.50000381\n bit(add(a,b),2,t):\t0.50000763\n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.50000381\n bit(add(a,b),5,t):\t0.50000381\n bit(add(a,b),6,t):\t0.50000381\n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.50000763\n bit(add(a,b),9,t):\t0.50000763\nfinal_carry(a,b,t):\t0.49951553\n' ;;; stderr: b'4608.41\n'
+stdout: b' bit(add(a,b),1,t):\t0.5       \nbit(add(a,b),10,t):\t0.50000381\n bit(add(a,b),2,t):\t0.50000763\n bit(add(a,b),3,t):\t0.5       \n bit(add(a,b),4,t):\t0.50000381\n bit(add(a,b),5,t):\t0.50000381\n bit(add(a,b),6,t):\t0.50000381\n bit(add(a,b),7,t):\t0.5       \n bit(add(a,b),8,t):\t0.50000763\n bit(add(a,b),9,t):\t0.50000763\nfinal_carry(a,b,t):\t0.49951553\n' ;;; stderr: b'4213.02\n'
