@@ -8,16 +8,23 @@ OOPSLA_CMD_FORMAT = ["../Dice.native", "{instance_path}"]
 DICE_CMD_FORMAT = ["../newdice/_build/default/bin/dice.exe", "{instance_path}"]
 DICE_COMMENT_FORMAT = "// %s"
 
+JULIA_CMD_FORMAT = ["julia", "--project", "{instance_path}", "{num_bits}"]
+JULIA_COMMENT_FORMAT = "# %s"
 
 TEST_TEMPLATES = [
     # ("circuit.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
     # ("linear.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
     # ("mix.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
-    ("bwh.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
+    # ("bwh.problog", PROBLOG_CMD_FORMAT, PROBLOG_COMMENT_FORMAT),
     # ("pyro_template.py", PYTHON_CMD_FORMAT, PYTHON_COMMENT_FORMAT),
     # ("oopsla_template.dice", OOPSLA_CMD_FORMAT, DICE_COMMENT_FORMAT),
     # ("uniform.dice", DICE_CMD_FORMAT, DICE_COMMENT_FORMAT),
     # ("dice.dice", DICE_CMD_FORMAT, DICE_COMMENT_FORMAT),
+    # ("bwh.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
+    # ("sbk.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
+    ("interleaved.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
+    # ("uniform.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
+    # ("interleaved_lsb_first.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
 ]
 
 TESTS = [
@@ -25,7 +32,7 @@ TESTS = [
     # "equals",
     "sum",
 ]
-NS = list(range(1, 30))
+NS = list(range(1, 101))
 TIMEOUT = 60 * 60 * 2
 REPETITIONS = 5  # take median of these
 
