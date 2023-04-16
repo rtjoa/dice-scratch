@@ -5,7 +5,7 @@ PYTHON_CMD_FORMAT = ["python3", "{instance_path}", "{num_bits}"]
 PYTHON_COMMENT_FORMAT = "# %s"
 
 OOPSLA_CMD_FORMAT = ["../Dice.native", "{instance_path}"]
-DICE_CMD_FORMAT = ["../newdice/_build/default/bin/dice.exe", "{instance_path}"]
+DICE_CMD_FORMAT = ["../newdice/_build/default/bin/dice.exe", "-eager-eval", "{instance_path}"]
 DICE_COMMENT_FORMAT = "// %s"
 
 JULIA_CMD_FORMAT = ["julia", "--project", "{instance_path}", "{num_bits}"]
@@ -19,10 +19,10 @@ TEST_TEMPLATES = [
     # ("pyro_template.py", PYTHON_CMD_FORMAT, PYTHON_COMMENT_FORMAT),
     # ("oopsla_template.dice", OOPSLA_CMD_FORMAT, DICE_COMMENT_FORMAT),
     # ("uniform.dice", DICE_CMD_FORMAT, DICE_COMMENT_FORMAT),
-    # ("dice.dice", DICE_CMD_FORMAT, DICE_COMMENT_FORMAT),
+    ("dice.dice", DICE_CMD_FORMAT, DICE_COMMENT_FORMAT),
     # ("bwh.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
     # ("sbk.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
-    ("interleaved.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
+    # ("interleaved.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
     # ("uniform.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
     # ("interleaved_lsb_first.jl", JULIA_CMD_FORMAT, JULIA_COMMENT_FORMAT),
 ]
